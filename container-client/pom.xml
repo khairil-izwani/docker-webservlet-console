@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.khairil</groupId>
+  <artifactId>container-client</artifactId>
+  <version>1-SNAPSHOT</version>
+  <packaging>jar</packaging>  
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jetty-version>8.1.14.v20131031</jetty-version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-webapp</artifactId>
+      <version>${jetty-version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-annotations</artifactId>
+      <version>${jetty-version}</version>
+      <scope>provided</scope>
+    </dependency>    
+  </dependencies>  
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.1.1</version>
+        <executions>
+          <execution>
+            <id>enforce-java</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>[3.0.0,)</version>
+                </requireMavenVersion>
+                <requireJavaVersion>
+                  <version>[1.6,)</version>
+                  <message>[ERROR] OLD JDK [${java.version}] in use.
+                    Jetty ${jetty-version} requires JDK 1.6 or newer</message>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <!--  <version>2.4</version> -->
+        <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>com.khairil.container.Launcher</mainClass>
+                <!-- somehow these configs do not automatically add the jars classpath to the manifest.mf! -->
+                <!-- ref: http://maven.apache.org/shared/maven-archiver/examples/classpath.html -->
+                <!-- 
+                <classpathPrefix>libs/</classpathPrefix>
+                <classpathLayoutType>repository</classpathLayoutType>
+                -->
+              </manifest>                          
+              <manifestEntries>
+                <Class-Path>
+                    libs/javax.activation-1.1.0.v201105071233.jar 
+                    libs/javax.servlet-api-3.0.1.jar 
+                    libs/jetty-http-8.1.14.v20131031.jar 
+                    libs/jetty-security-8.1.14.v20131031.jar 
+                    libs/jetty-webapp-8.1.14.v20131031.jar 
+                    libs/javax.annotation-1.1.0.v201108011116.jar 
+                    libs/javax.transaction-1.1.1.v201105210645.jar 
+                    libs/jetty-io-8.1.14.v20131031.jar 
+                    libs/jetty-server-8.1.14.v20131031.jar 
+                    libs/jetty-xml-8.1.14.v20131031.jar 
+                    libs/javax.mail.glassfish-1.4.1.v201005082020.jar 
+                    libs/jetty-annotations-8.1.14.v20131031.jar 
+                    libs/jetty-jndi-8.1.14.v20131031.jar 
+                    libs/jetty-servlet-8.1.14.v20131031.jar 
+                    libs/org.objectweb.asm-3.1.0.v200803061910.jar 
+                    libs/javax.servlet-3.0.0.v201112011016.jar 
+                    libs/jetty-continuation-8.1.14.v20131031.jar 
+                    libs/jetty-plus-8.1.14.v20131031.jar 
+                    libs/jetty-util-8.1.14.v20131031.jar
+                </Class-Path>
+              </manifestEntries>              
+            </archive>
+        </configuration>
+      </plugin>      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.5.1</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+                <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+                <includeGroupIds>javax.servlet,org.eclipse.jetty</includeGroupIds>
+                <outputDirectory>${project.build.directory}/libs/</outputDirectory>
+            </configuration>
+          </execution>
+         </executions>
+        </plugin>  
+    </plugins>
+  </build>   
+            
+</project>
