@@ -1,7 +1,7 @@
 Host Container Servlet via Embedded Jetty
 ============================================
 
-This is a maven project setup as a JAR packaging, with an Launcher class in
+This is a maven project setup as a JAR packaging, with a Launcher class in
 the provided scope that can be started as a java application.
 
 Quick Start
