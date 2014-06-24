@@ -23,9 +23,7 @@ how to run
 2. Copy host.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/host.jar
 3. Copy container.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/container.jar
 4. Start the host.jar
-
       $ java -jar host.jar
-
 5. Run an image that executes container.jar as a foreground (or background process).
       $ docker run -d **{myimage}** java -jar container.jar
 6. Get the name of newly created container which is running, e.g. 'mycontainer' is returned.
