@@ -5,8 +5,8 @@ What is the idea?
 -----------------
 It acts as a web or mobile console to remotely connect, access and execute stuffs inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
 
-My Development Stack
---------------------
+Development Stack
+-----------------
 * Fedora 19 64 bit
 * Java 1.6 u38
 * Docker 1.0.0
@@ -32,7 +32,7 @@ Quick Start
 
 5. Run an image that executes container.jar as a foreground (or background process).
 
-        $ docker run -d {myimage} java -jar container.jar
+        $ docker run -d <myimage> java -jar container.jar
 
 6. Get the name of newly created container which is running, e.g. 'mycontainer' is returned.
 
@@ -46,7 +46,7 @@ Quick Start
 
         http://localhost:8070/host
         
-9. To start the container, type
+9. To re-start the container we just stopped, in the command input type
 
         start mycontainer       
         
