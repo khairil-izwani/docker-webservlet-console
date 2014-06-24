@@ -50,9 +50,9 @@ Quick Start
 
         start mycontainer       
         
-10. If successful [connected@mycontainer] is returned in the command input field.
+10. If it's successful, [connected@mycontainer] will be returned in the command input field as a prefix.
 
-11. To list out the content inside the 'mycontainer' container.
+11. To list out the content inside 'mycontainer'.
 
         [connected@mycontainer]ls -ltr
 
