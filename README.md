@@ -30,7 +30,7 @@ Quick Start
 
         $ java -jar host.jar
 
-5. Run an image that executes container.jar as a foreground (or background process).
+5. Run an image that executes container.jar as a foreground (or background) process.
 
         $ docker run -d <myimage> java -jar container.jar
 
