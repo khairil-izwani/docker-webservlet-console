@@ -26,10 +26,8 @@ how to run
 3. Copy container.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/container.jar
 
 4. Start the host.jar
-
-'''
+<!-- -->
 	$ java -jar host.jar
-'''	
 
 5. Run an image that executes container.jar as a foreground (or background process).
 
