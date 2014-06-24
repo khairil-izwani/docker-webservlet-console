@@ -52,7 +52,9 @@ Quick Start
         
 10. If successful [connected@mycontainer] is returned in the command input field.
 
-11. Type ls after [connected@mycontainer] to list content inside the 'mycontainer' container.
+11. To list out the content inside the 'mycontainer' container.
+
+        [connected@mycontainer]ls -ltr
 
 12. To stop container
 
