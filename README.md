@@ -20,24 +20,43 @@ prerequisite
 how to run
 ----------
 1. Start the docker service.
+
 2. Copy host.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/host.jar
+
 3. Copy container.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/container.jar
+
 4. Start the host.jar
-      $ java -jar host.jar
+
+	$ java -jar host.jar
+
 5. Run an image that executes container.jar as a foreground (or background process).
-      $ docker run -d **{myimage}** java -jar container.jar
+
+	$ docker run -d **{myimage}** java -jar container.jar
+
 6. Get the name of newly created container which is running, e.g. 'mycontainer' is returned.
-      $ docker ps
+
+	$ docker ps
+
 7. Stop the newly created container.
-      $ docker stop mycontainer
-8. Open a web browser and go to 
-      http://localhost:8070/host
+
+	$ docker stop mycontainer
+
+8. Open a web browser and go to
+
+	http://localhost:8070/host
+
 9. To start the container, type
-      start mycontainer
+
+	start mycontainer
+
 10. If successful [connected@mycontainer] is returned in the command input field.
+
 11. Type ls after [connected@mycontainer] to list content inside the 'mycontainer' container.
+
 12. To stop container
-      stop mycontainer
+
+	stop mycontainer
+
 
 Remarks
 -------
