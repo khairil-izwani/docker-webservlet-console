@@ -27,7 +27,7 @@ how to run
 
 4. Start the host.jar
 
-	'$ java -jar host.jar'
+	$ java -jar host.jar
 
 5. Run an image that executes container.jar as a foreground (or background process).
 
