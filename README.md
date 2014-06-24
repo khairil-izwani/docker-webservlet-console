@@ -11,7 +11,7 @@ my development stack
 * Java 1.6 u38
 * Docker 1.0.0
 
-prerequisite
+pre-requisite
 ------------
 * Docker version  >= 1.0.0
 * Fair knowledge of using docker to create, start and stop containers.
@@ -27,7 +27,9 @@ how to run
 
 4. Start the host.jar
 
+'''
 	$ java -jar host.jar
+'''	
 
 5. Run an image that executes container.jar as a foreground (or background process).
 
