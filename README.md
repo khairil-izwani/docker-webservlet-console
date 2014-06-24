@@ -7,9 +7,9 @@ It acts as a web or mobile console to remotely connect, access and execute stuff
 
 my development stack
 --------------------
-Fedora 19 64 bit
-Java 1.6 u38
-Docker 1.0.0
+* Fedora 19 64 bit
+* Java 1.6 u38
+* Docker 1.0.0
 
 prerequisite
 ------------
@@ -23,20 +23,22 @@ how to run
 2. Copy host.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/host.jar
 3. Copy container.jar (~2mb) from https://dl.dropboxusercontent.com/u/43630710/docker-webservlet-console/bin/container.jar
 4. Start the host.jar
+
       $ java -jar host.jar
+
 5. Run an image that executes container.jar as a foreground (or background process).
-      $ docker run -d *<myimage>* java -jar container.jar
+      $ docker run -d **{myimage}** java -jar container.jar
 6. Get the name of newly created container which is running, e.g. 'mycontainer' is returned.
       $ docker ps
 7. Stop the newly created container.
       $ docker stop mycontainer
 8. Open a web browser and go to 
       http://localhost:8070/host
-7. To start the container, type
+9. To start the container, type
       start mycontainer
-8. If successful [connected@mycontainer] is returned in the command input field.
-9. Type ls after [connected@mycontainer] to list content inside the 'mycontainer' container.
-10. To stop container
+10. If successful [connected@mycontainer] is returned in the command input field.
+11. Type ls after [connected@mycontainer] to list content inside the 'mycontainer' container.
+12. To stop container
       stop mycontainer
 
 Remarks
