@@ -109,7 +109,7 @@ Create Hello World in Java
 --------------------------
 This to demonstrate how to add a new script/program/process and execute it inside an already running container via the client web console.
 
-1. type this in the ouput field of the web console
+type this in the ouput field of the web console
 
 ```java
 public class Welcome {
@@ -119,16 +119,16 @@ public class Welcome {
 }
 ```
 
-2. save the file by typing in the input field
+save the file by typing in the input field
 
         [connected@mycontainer]save-as Welcome.java
         
-3. compile the java file
+compile the java file
 
         [connected@mycontainer]javac Welcome.java
         
-4. run the java class
+run the java class
 
          [connected@mycontainer]java Welcome
          
-5. notice "Welcome to container!" is displayed in the output field.
+notice "Welcome to container!" is displayed in the output field.
