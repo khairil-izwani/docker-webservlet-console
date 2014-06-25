@@ -3,10 +3,11 @@ docker-webservlet-console
 
 The Idea
 --------
-It acts as a web or mobile console to remotely connect, access and execute stuffs inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
+It acts as a desktop / mobile web console to remotely connect, access and execute stuffs inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
 
 Development Stack
------------------
+--------------------
+This project is developed and tested on :-
 * Fedora 19 64 bit
 * Java 1.6 u38
 * Docker 1.0.0
