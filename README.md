@@ -26,7 +26,6 @@ Pre-requisite
 * Fair knowledge of using docker to create, start and stop containers.
 * Java (jdk or jre version > 1.6) is installed in both host and container and accessible via console.
 
-
 Quick Start
 -----------
 1. Start the docker service.
@@ -82,6 +81,13 @@ Command List
         
      3. `save-as <file name with extension>` save content as a file.
      
+Change Servlet Port
+-------------------
+By default both host.jar and container.jar are running on port 8070. To change port e.g. host to 8075 and container to 8074, run
+
+    java -jar host.jar 8075 8074
+    java -jar container.jar 8074
+
 UI / UX
 -------
 1. For the time being it has been decided to use a very simple console layout. No fancy html,css or js stuffs.
