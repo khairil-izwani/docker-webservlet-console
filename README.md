@@ -3,7 +3,7 @@ docker-webservlet-console
 
 The Idea
 --------
-It acts as a desktop / mobile web console to connect, read, write and execute stuffs remotely inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
+It acts as a desktop / mobile web console to connect, read, write and execute stuffs remotely inside the running containers hosted in the local machine. Additionally, by using tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
 
 How It Is Done
 --------------
@@ -68,6 +68,12 @@ Quick Start
 
         stop mycontainer
 
+UI / UX
+-------
+1. For the time being the web console is developed with a simple style in mind. No fancy html,css or js stuffs.
+2. It uses what is available from the web browser such as loading status, autocomplete etc.
+3. The console's html file consists of 2 fields. One is for displaying output and one is for sending input.
+4. For creating a new file via 'save-as' command, output field will be used to transport the file content to the server side.
 
 Command List
 ------------
@@ -79,16 +85,47 @@ Command List
         
      2. `stop <container name>` to stop existing container.
         
-     3. `save-as <file name with extension>` save content as a file.
+     3. `save-as <file name with extension>` create or update a file.
      
 Change Servlet Port
 -------------------
+
+    $ java -jar host.jar <host_port> <container_port> e.g.
+    $ docker run -d <myimage> java -jar container.jar <container_port> e.g.
+
 By default both host.jar and container.jar run on port 8070. To change the port e.g. host to 8075 and container to 8074, run
 
     $ java -jar host.jar 8075 8074
     $ docker run -d <myimage> java -jar container.jar 8074
+    
+Getting 'Connection refused' error after starting the container is likely due to the port which is
+1. already in use or
+2. the host servlet which cannot find the port defined in the container servlet. 
 
-UI / UX
--------
-1. For the time being it has been decided to use a very simple console layout. No fancy html,css or js stuffs.
-2. Do not recreate. Use the available UX related functionality of the web browser such as loading status, autocomplete etc.
+Make sure they'are all set correctly as example above.
+    
+Create Hello World in Java
+--------------------------
+This to demonstrate how to add a new script/program/process and execute it inside an already running container via the client web console.
+
+1. type this in the ouput field of the web console
+
+        public class Welcome {
+           public static void main(String[] args) {
+             System.out.println("Welcome to container!");
+           }
+        }
+
+2. save the file by typing in the input field
+
+        [connected@mycontainer]save-as Welcome.java
+        
+3. compile the java file
+
+        [connected@mycontainer]javac Welcome.java
+        
+4. run the java class
+
+         [connected@mycontainer]java Welcome
+         
+5. notice "Welcome to container!" is displayed in the output field.
