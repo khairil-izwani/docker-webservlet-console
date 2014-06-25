@@ -3,15 +3,14 @@ docker-webservlet-console
 
 The Idea
 --------
-It acts as a desktop / mobile web console to remotely connect, access and execute stuffs inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
-
+It acts as a desktop / mobile web console to connect, read, write and execute stuffs remotely inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
 How It Is Done
 --------------
-Both host and container talk to each other via inter servlet communication. It does not use the RESTful Docker Remote API but instead forwards the docker native command to the Java Runtime API. 
+Both host and container are talking to each other via inter servlet communication. It does not use the RESTful Docker Remote API but instead forwards the docker native command to the Java Runtime API. 
 
 Why It Is Done This Way
 -----------------------
-I found it's quite hard to find a good example of attaching the STDIN to the running container via remote API for host-container interaction. Besides, the 'docker execute' command is not yet available in the release 1.0.0. This might change in the future once there is more resources of doing this.
+I found it's quite hard to find a good example of attaching input to the STDIN in the running container via remote API for host-container interaction. Besides, the 'docker execute' command is not yet available in the release 1.0.0. This might change in the future once there is more resources of doing this.
 
 Development Stack
 --------------------
