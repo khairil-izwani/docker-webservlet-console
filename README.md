@@ -4,6 +4,7 @@ docker-webservlet-console
 The Idea
 --------
 It acts as a desktop / mobile web console to connect, read, write and execute stuffs remotely inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
+
 How It Is Done
 --------------
 Both host and container are talking to each other via inter servlet communication. It does not use the RESTful Docker Remote API but instead forwards the docker native command to the Java Runtime API. 
@@ -81,12 +82,7 @@ Command List
         
      3. `save-as <file name with extension>` save content as a file.
      
-Options
--------
-1. 
-
-
 UI / UX
 -------
-1. For the time being it has been decided to use a very simple console look. No fancy html,css or js stuffs.
-2. Use the available UX functionality of the web browser such as loading status, autocomplete etc.
+1. For the time being it has been decided to use a very simple console layout. No fancy html,css or js stuffs.
+2. Do not recreate. Use the available UX related functionality of the web browser such as loading status, autocomplete etc.
