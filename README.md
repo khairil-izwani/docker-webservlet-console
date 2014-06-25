@@ -7,7 +7,7 @@ It acts as a desktop / mobile web console to remotely connect, access and execut
 
 How It Is Done
 --------------
-Both host and containers are connected to each other via inter servlet communication over tcp connection (http). It does not use the RESTful Docker Remote API but instead forwards the docker native command to the Java Runtime API.   
+Both host and containers are talked to each other via inter servlet communication. It does not use the RESTful Docker Remote API but instead forwards the docker native command to the Java Runtime API. 
 
 Development Stack
 --------------------
