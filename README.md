@@ -62,9 +62,18 @@ Quick Start
         stop mycontainer
 
 
-Remarks
--------
-TODO
+Command List
+------------
+1. Almost all commands which are permitted in the docker container can be executed via web console except those which need user input interactivity such as cd, vi etc.
+
+2. Additional commands
+
+        1. start <container name> to start existing container
+        
+        2. stop <container name> to stop existing container
+        
+        3. save-as <file name with extension> save content as a file
+
 
 
 
