@@ -108,7 +108,6 @@ Make sure they'are all set correctly as example above.
 Create Hello Container in Java
 ------------------------------
 This to demonstrate how to add a new script/program/process and execute it inside an already running container via the client web console. 
-
 *This is not limited to java but any other language such php or nodejs once the container servlet is started as a background process.*
 
 1. type this in the ouput field of the web console
