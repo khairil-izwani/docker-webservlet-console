@@ -64,7 +64,7 @@ Quick Start
 
 Command List
 ------------
-1. Almost all commands which are permitted in the docker container can be executed via web console except those which need user input interactivity such as cd, vi etc.
+1. Almost all of the commands which are permitted in the docker container can be executed via web console except those which need user input interactivity such as cd, vi etc.
 
 2. Additional commands
 
