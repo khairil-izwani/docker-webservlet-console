@@ -83,7 +83,7 @@ Command List
      
 Change Servlet Port
 -------------------
-By default both host.jar and container.jar are running on port 8070. To change port e.g. host to 8075 and container to 8074, run
+By default both host.jar and container.jar run on port 8070. To change the port e.g. host to 8075 and container to 8074, run
 
     $ java -jar host.jar 8075 8074
     $ docker run -d <myimage> java -jar container.jar 8074
