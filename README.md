@@ -109,26 +109,26 @@ Create Hello World in Java
 --------------------------
 This to demonstrate how to add a new script/program/process and execute it inside an already running container via the client web console.
 
-type this in the ouput field of the web console
+1. type this in the ouput field of the web console
 
-```java
-public class Welcome {
-   public static void main(String[] args) {
-     System.out.println("Welcome to container!");
-   }
-}
-```
+        ```java
+        public class Welcome {
+           public static void main(String[] args) {
+             System.out.println("Welcome to container!");
+           }
+        }
+        ```
 
-save the file by typing in the input field
+2. save the file by typing in the input field
 
         [connected@mycontainer]save-as Welcome.java
         
-compile the java file
+3. compile the java file
 
         [connected@mycontainer]javac Welcome.java
         
-run the java class
+4. run the java class
 
          [connected@mycontainer]java Welcome
          
-notice "Welcome to container!" is displayed in the output field.
+5. notice "Welcome to container!" is displayed in the output field.
