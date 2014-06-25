@@ -68,11 +68,11 @@ Command List
 
 2. Additional commands
 
-     1. `start <container name>` to start existing container
+     1. `start <container name>` to start existing container.
         
-     2. `stop <container name>` to stop existing container
+     2. `stop <container name>` to stop existing container.
         
-     3. `save-as <file name with extension>` save content as a file
+     3. `save-as <file name with extension>` save content as a file.
 
 
 
