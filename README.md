@@ -105,8 +105,8 @@ Getting 'Connection refused' error after starting the container is likely due to
 
 Make sure they'are all set correctly as example above.
     
-Create Hello World in Java
---------------------------
+Create Hello Container in Java
+------------------------------
 This to demonstrate how to add a new script/program/process and execute it inside an already running container via the client web console.
 
 1. type this in the ouput field of the web console
@@ -114,7 +114,7 @@ This to demonstrate how to add a new script/program/process and execute it insid
    ```java
         public class Welcome {
            public static void main(String[] args) {
-             System.out.println("Welcome to container!");
+             System.out.println("Hello container!");
            }
         }
    ```
@@ -131,4 +131,4 @@ This to demonstrate how to add a new script/program/process and execute it insid
 
          [connected@mycontainer]java Welcome
          
-5. notice "Welcome to container!" is displayed in the output field.
+5. notice "Hello container!" is displayed in the output field.
