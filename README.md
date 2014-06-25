@@ -75,5 +75,7 @@ Command List
      3. `save-as <file name with extension>` save content as a file.
 
 
-
-
+UI/ UX
+------
+1. For the time being it has been decided to keep the console look as simple as possible. No fancy html,css or js stuffs.
+2. Use the available UX functionality of the web browser such as loading status, autocomplete etc.
