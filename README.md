@@ -112,11 +112,11 @@ This to demonstrate how to add a new script/program/process and execute it insid
 1. type this in the ouput field of the web console
 
 ```java
-        public class Welcome {
-           public static void main(String[] args) {
-             System.out.println("Welcome to container!");
-           }
-        }
+public class Welcome {
+   public static void main(String[] args) {
+     System.out.println("Welcome to container!");
+   }
+}
 ```
 
 2. save the file by typing in the input field
