@@ -5,6 +5,10 @@ The Idea
 --------
 It acts as a desktop / mobile web console to remotely connect, access and execute stuffs inside the running containers hosted in the local machine. Additionally, by using local tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
 
+How It Is Done
+--------------
+Both host and containers are connected to each other via inter servlet communication over tcp connection (http). It does not use the RESTful Docker Remote API but instead forwards the docker native command to the Java Runtime API.   
+
 Development Stack
 --------------------
 This project is developed and tested on :-
@@ -76,6 +80,7 @@ Command List
      
 Options
 -------
+1. 
 
 
 UI / UX
