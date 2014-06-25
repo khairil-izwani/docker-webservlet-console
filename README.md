@@ -90,8 +90,8 @@ Command List
 Change Servlet Port
 -------------------
 
-    $ java -jar host.jar <host_port> <container_port> e.g.
-    $ docker run -d <myimage> java -jar container.jar <container_port> e.g.
+    $ java -jar host.jar <host_port> <container_port>
+    $ docker run -d <myimage> java -jar container.jar <container_port>
 
 By default both host.jar and container.jar run on port 8070. To change the port e.g. host to 8075 and container to 8074, run
 
@@ -99,6 +99,7 @@ By default both host.jar and container.jar run on port 8070. To change the port 
     $ docker run -d <myimage> java -jar container.jar 8074
     
 Getting 'Connection refused' error after starting the container is likely due to the port which is
+
 1. already in use or
 2. the host servlet which cannot find the port defined in the container servlet. 
 
@@ -110,11 +111,13 @@ This to demonstrate how to add a new script/program/process and execute it insid
 
 1. type this in the ouput field of the web console
 
+```java
         public class Welcome {
            public static void main(String[] args) {
              System.out.println("Welcome to container!");
            }
         }
+```
 
 2. save the file by typing in the input field
 
