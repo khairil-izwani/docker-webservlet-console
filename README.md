@@ -184,22 +184,26 @@ Misc
    3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
 
 2. To run container.jar as a background process is easy. We just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. *If we expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). We can do that if docker image is run using /bin/bash, but it will not start the bg process automatically when the container is started again.*
+
+   Assume that host.jar has been added to the image.
+   
    1. via command line 
         1. the .sh file. Let say name it start.sh
 
            ```
                 #!/bin/bash
-                java -jar /opt/servlet/starter.jar & <our script here>
+                java -jar /opt/servlet/host.jar & <our script here>
            ```
 
-        2. run the sh file in the docker run docker run -i -t <myimage> ./start.sh
+        2. run the sh file `docker run -i -t <myimage> ./start.sh`
         
    2. via Dockerfile
-        1. the .sh file. Let say name it start.sh
+        1. as example
 
            ```
-                #!/bin/bash
-                java -jar /opt/servlet/starter.jar & <our script here>
+                FROM <myimage>:1.4
+                MAINTAINER khairil <khaiz83@gmail.com>
+                CMD ["/bin/bash", "-c","java -jar /opt/servlet/host.jar & <our script here>"]
            ```
 
-        2. run the sh file in the docker run docker run -i -t <myimage> ./start.sh        
+        2. navigate to the folder run the Dockerfile `docker build -t <myimage>:1.5 .`
