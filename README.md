@@ -161,7 +161,7 @@ Let's assume that we use terminal, navigating to container-host root folder (whi
 
 Create Executable Jar
 ---------------------
-mvn clean install will create a runnable jar in the 'target' folder but it is named with the version number e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if you like. 
+`mvn clean install` will create a runnable jar in the 'target' folder but it is named with the version number e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if you like. 
 
 If you copy this jar to somewhere else or to container, you will need to copy the libs folder as well.
 
