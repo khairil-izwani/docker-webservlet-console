@@ -185,7 +185,19 @@ Misc and General Knowledge
    2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
    3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
 
-2. To run container.jar as a background process is easy. We just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. *If we expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). We can do that if docker image is run using /bin/bash, but it will not start the bg process automatically when the container is started again.*
+2. If we want to directly copy the container.jar file from the host to a container, we will need to use volume to mount the host directory inside the container (assume container.jar is added in /usr folder in the host). e.g. 
+
+   `docker run -i -t -v /usr:/root mattdm/fedora /bin/bash`
+
+   Then inside the container, we navigate to /root folder and copy the container.jar
+
+   After we do this, usually we will commit this container and create a new image. **Then the new container created from    this new image will still have the directory to host unmounted**. This might raise a security concern. To solve this     issue, we can recreate a new image from this container.
+   
+3. Dockerfile is an easier way to copy container.jar (or the jdk/jre) to container if we prefer to copy them directly instead of downloading from docker repository. The example below will copy the jdk and container.jar and execute the container.jar automatically when container is started.
+
+                TODO
+
+4. To run container.jar as a background process is easy. We just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. *If we expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). We can do that if docker image is run using /bin/bash, but it will not start the bg process automatically when the container is started again.*
 
    Assume that host.jar has been added to the image.
    
@@ -197,7 +209,7 @@ Misc and General Knowledge
                 java -jar /opt/servlet/host.jar & <our script here>
            ```
 
-        2. run the sh file `docker run -i -t <myimage> ./start.sh`
+        2. run the sh file `docker run -i -t <myimage> ./start.sh` to create a new image.
         
    2. via Dockerfile
         1. as example
@@ -208,16 +220,5 @@ Misc and General Knowledge
                 CMD ["/bin/bash", "-c","java -jar /opt/servlet/host.jar & <our script here>"]
            ```
 
-        2. navigate to the folder run the Dockerfile `docker build -t <myimage>:1.5 .`
+        2. navigate to the folder run the Dockerfile `docker build -t <myimage>:1.5 .` to create a new image.
         
-3. If we want to directly copy the container.jar file from the host to a container, we will need to use volume to mount the host directory inside the container (assume container.jar is added in /usr folder in the host). e.g. 
-
-   `docker run -i -t -v /usr:/root mattdm/fedora /bin/bash`
-
-   Then inside the container, we navigate to /root folder and copy the container.jar
-
-   After we do this, usually we will commit this container and create a new image. **Then the new container created from    this new image will still have the directory to host unmounted**. This might raise a security concern. To solve this     issue, we can recreate a new image from this container.
-   
-4. To use Dockerfile is an easier way to copy container.jar (or the jdk/jre) to container if we prefer to copy them directly instead of downloading from docker repository. The example below will copy the jdk and container.jar and execute the container.jar automatically when container is started.
-
-                TODO
