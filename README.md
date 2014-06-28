@@ -161,9 +161,9 @@ Let's assume that we use terminal, navigating to container-host root folder (whi
 
 Create Executable Jar
 ---------------------
-`mvn clean install` creates a runnable jar in the 'target' folder but it is postfixed with a version string e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if you like. 
+`mvn clean install` creates a runnable jar in the 'target' folder but it is postfixed with a version string e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if we like. 
 
-If you copy this jar to somewhere else or to the container, you will need to copy the libs folder as well.
+If we copy this jar to somewhere else or to the container, we will need to copy the libs folder as well.
 
 *I have not (yet) successful executing this jar as a single jar together with its dependencies via Maven. But this can be done easily via Eclipse*
 
@@ -183,7 +183,7 @@ Misc
    2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
    3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
 
-2. To run container.jar as a background process is easy. You just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. *If you expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). You can only do that if you run docker image using /bin/bash*
+2. To run container.jar as a background process is easy. We just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. *If we expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). We can do that if docker image is run using /bin/bash, but it will not start the bg process automatically when the container is started again.*
    1. via command line 
         1. the .sh file. Let say name it start.sh
 
