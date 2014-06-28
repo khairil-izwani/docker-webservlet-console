@@ -159,13 +159,13 @@ Let's assume that we use terminal, navigating to container-host root folder (whi
 
          mvn eclipse:eclipse
 
-Create Runnable Jar
--------------------
+Create Executable Jar
+---------------------
 mvn clean install will create a runnable jar in the 'target' folder but it is named with the version number e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if you like. 
 
 If you copy this jar to somewhere else or to container, you will need to copy the libs folder as well.
 
-*I have not (yet) successful to execute this jar as a single jar together with its dependencies via maven plugins. But this can be done easily via Eclipse*
+*I have not (yet) successful executing this jar as a single jar together with its dependencies via Maven. But this can be done easily via Eclipse*
 
 To create a single jar via Eclipse,
    1. Right click a project
@@ -174,4 +174,3 @@ To create a single jar via Eclipse,
    4. Choose Runnable Jar file
    5. Select Launcher class from Launch configuration dropdown
    6. Choose 'Package required libraries into generated JAR'
-        
