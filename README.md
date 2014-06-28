@@ -13,18 +13,17 @@ Why It Is Done This Way
 -----------------------
 I found it's quite hard to find a good example of attaching input to the STDIN in the running container via Docker remote API for host-container interaction. Besides, the 'docker execute' command is not yet available in the Docker release 1.0.0. This might change in the future once there is more resources of doing this.
 
-Development Stack
---------------------
-This project is developed and tested on :-
+Tech Stack
+----------
 * Fedora 19 64 bit
-* Java 1.6 u38
 * Docker 1.0.0
-* Maven 3.x
-* Eclipse IDE (optional)
+* Java 1.6 u38
+* Maven 3.x (for development)
+* Eclipse IDE (for development - optional)
 
-Pre-requisite
-------------
-* Docker version  >= 1.0.0
+Pre-requisite to Run This Project
+---------------------------------
+* Docker version  >= 1.0.0 is installed in the host.
 * Fair knowledge of using docker to create, start and stop containers.
 * Java (jdk or jre version > 1.6) is installed in both host and container and accessible via console.
 
@@ -136,3 +135,32 @@ This to demonstrate how to add a new script/program/process and execute it insid
          [connected@mycontainer]java Welcome
          
 5. notice "Hello container!" is displayed in the output field.
+
+Modifying the Source Code and Rebuild It
+----------------------------------------
+This project is developed and tested on Fedora 19 only, but it should work on other linux distros as well. However some distros might use different commands. Currently there is no plan to have command factory for other distros but replacing command in the code is trivial. 
+
+This project uses Maven and Eclipse IDE for development.
+
+Two projects are available in the master branch. One is called container-client and the other is container-host. Container-client is used to develop container.jar and container-host is for host.jar. 
+
+container-client contains the code to forward the command to the container.
+
+container-host contains the main code to delegate the commands either to host or container. Usually this is the interesting part to look at.
+
+
+Let's assume that we use terminal, navigating to container-host root folder (which contains pom.xml).
+
+1. Import project dependencies, type
+
+         mvn clean install
+         
+2. Create as Eclipse project, type
+
+         mvn eclipse:eclipse
+        
+mvn clean install will create a runnable jar in the 'target' folder but it is named with the version number e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if you like. 
+
+If you copy this jar to somewhere else or to container, you will need to copy the libs folder as well.
+
+*Due to some issue, it's not (yet) possible to run this jar successfully as a single jar together with its dependencies via maven plugins unless this is done via Eclipse IDE via export -> as runnable jar -> package*
