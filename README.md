@@ -142,7 +142,7 @@ This project is developed and tested on Fedora 19 only, but it should work on ot
 
 This project uses Maven and Eclipse IDE for development.
 
-Two projects are available in the master branch. One is called container-client and the other is container-host. Container-client is used to develop container.jar and container-host is for host.jar. 
+Two projects are available in the master branch. One is called **container-client** and the other is **container-host**. Container-client is used to develop container.jar and container-host is for host.jar. 
 
 container-client contains the code to forward the command to the container.
 
