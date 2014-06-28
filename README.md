@@ -161,9 +161,9 @@ Let's assume that we use terminal, navigating to container-host root folder (whi
 
 Create Executable Jar
 ---------------------
-`mvn clean install` creates a runnable jar in the 'target' folder but it is postfixed with a version string e.g. container-host-1-SNAPSHOT.jar and a folder called 'libs' that contains all the dependencies. Rename the jar if we like. 
+`mvn clean install` creates a runnable jar in the '**target**' folder but it is postfixed with a version string e.g. container-host-1-SNAPSHOT.jar and a folder called '**libs**' that contains all the dependencies. Rename the jar if we like. 
 
-If we copy this jar to somewhere else or to the container, we will need to copy the libs folder as well.
+If we copy this jar to somewhere else or to the container, we will need to copy the **libs** folder as well.
 
 *I have not (yet) successful executing this jar as a single jar together with its dependencies via Maven. But this can be done easily via Eclipse*
 
