@@ -179,8 +179,8 @@ Misc
 ----
 1. By default docker daemon and cli will run as root. It means that host.jar will need to be executed as root as well, else you will get permission denied when try to execute some commands especially docker commands. But this will raise security concern. However docker gives option to run docker cli as non-root user, which means host.jar can be run as non-root user. There are many references of it :
 
-   https://docs.docker.com/installation/binaries/#giving-non-root-access
-   http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
-   http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
+   1. https://docs.docker.com/installation/binaries/#giving-non-root-access
+   2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
+   3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
    
 2. 
