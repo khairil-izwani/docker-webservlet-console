@@ -220,5 +220,5 @@ Misc and General Knowledge
                 CMD ["/bin/bash", "-c","java -jar /opt/servlet/container.jar & <our script here>"]
            ```
 
-        2. navigate to the folder run the Dockerfile `docker build -t <myimage>:1.5 .` to create a new image.
+        2. navigate to the folder that contains the Dockerfile and run `docker build -t <myimage>:1.5 .` to create a new image.
         
