@@ -175,8 +175,8 @@ To create a single jar together with it dependencies via Eclipse,
    5. Select Launcher class from Launch configuration dropdown
    6. Choose 'Package required libraries into generated JAR'
 
-Misc
-----
+Misc and General Knowledge
+--------------------------
 1. By default docker daemon and cli will run as root. It means that host.jar will need to be executed as root as well, else we will get permission denied when try to execute some commands especially docker commands. But this will raise security concern. However docker gives option to run docker cli as non-root user, which means host.jar can be run as non-root user. There are many references of it :
 
    1. https://docs.docker.com/installation/binaries/#giving-non-root-access
@@ -207,3 +207,11 @@ Misc
            ```
 
         2. navigate to the folder run the Dockerfile `docker build -t <myimage>:1.5 .`
+        
+3. If we want to directly copy the container.jar file from the host to a container, we will need to use volume to mount the host directory inside the container (assume container.jar is added in /usr folder in the host). e.g. 
+
+   `docker run -i -t -v /usr:/root mattdm/fedora /bin/bash`
+
+Then inside the container, we navigate to /root folder and copy the container.jar
+
+After we do this, usually we will commit this container and create a new image. Then the new container created from this new image will still have the directory to host unmounted. This might raise security concern. To solve this issue, we can recreate a new image from this container.
