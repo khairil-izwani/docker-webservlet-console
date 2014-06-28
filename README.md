@@ -11,7 +11,7 @@ Both host and container are talking to each other via inter servlet communicatio
 
 Why It Is Done This Way
 -----------------------
-I found it's quite hard to find a good example of attaching input to the STDIN in the running container via Docker remote API for host-container interaction. Besides, the 'docker execute' command is not yet available in the Docker release 1.0.0. This might change in the future once there is more resources of doing this.
+I found it's quite hard to find a good example of attaching input to the STDIN in the running container via Docker remote API for host-container interaction. Besides, the 'docker execute' command is not yet available in the Docker release 1.0.0. This might change in the future once there is more resources of doing it.
 
 Tech Stack
 ----------
