@@ -177,7 +177,7 @@ To create a single jar together with it dependencies via Eclipse,
 
 Misc and General Knowledge
 --------------------------
-1. By default docker daemon and cli will run as root. It means that host.jar will need to be executed as root as well, else we will get permission denied when try to execute some commands especially docker commands. But this will raise security concern. However docker gives option to run docker cli as non-root user, which means host.jar can be run as non-root user. There are many references of it :
+1. By default docker daemon and cli will run as root. It means that host.jar will need to be executed as root as well, else we will get permission denied when try to execute some commands especially docker commands. But this will raise a security concern. However docker gives option to run docker cli as non-root user, which means host.jar can be run as non-root user. There are many references of it :
 
    1. https://docs.docker.com/installation/binaries/#giving-non-root-access
    2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
@@ -215,3 +215,11 @@ Misc and General Knowledge
    Then inside the container, we navigate to /root folder and copy the container.jar
 
    After we do this, usually we will commit this container and create a new image. **Then the new container created from    this new image will still have the directory to host unmounted**. This might raise a security concern. To solve this     issue, we can recreate a new image from this container.
+   
+4. To use Dockerfile is an easier way to copy container.jar to container and/or the jdk/jre if we prefer to copy them directly instead of using packager such as yum or apt.
+
+           ```
+                FROM <myimage>:1.4
+                MAINTAINER khairil <khaiz83@gmail.com>
+                CMD ["/bin/bash", "-c","java -jar /opt/servlet/host.jar & <our script here>"]
+           ```
