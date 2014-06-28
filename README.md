@@ -218,7 +218,7 @@ Misc and General Knowledge
 
    After we do this, usually we will commit this container and create a new image. **Then the new container created from    this new image will still have the directory to host unmounted**. This might raise a security concern. To solve this     issue, we can recreate a new image from this container.
    
-4. To use Dockerfile is an easier way to copy container.jar to container and/or the jdk/jre if we prefer to copy them directly instead of using packager such as yum or apt.
+4. To use Dockerfile is an easier way to copy container.jar (or the jdk/jre) to container if we prefer to copy them directly instead of using packager such as yum or apt.
 
                 FROM <myimage>:1.4
                 MAINTAINER khairil <khaiz83@gmail.com>
