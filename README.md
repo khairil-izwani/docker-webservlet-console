@@ -74,19 +74,21 @@ UI / UX
 1. For the time being the web console is developed with a simple style in mind. No fancy html,css or js stuffs.
 2. It uses what is available from the web browser such as loading status, autocomplete etc.
 3. The console's html file consists of 2 fields. One is for displaying output and one is for sending input.
-4. For creating a new file via 'save-as' command, output field will be used to transport the file content to the server side.
+4. For creating a new file via 'save-as' command (refer to Command List below), output field will be used to transport the file content to the server side.
 
 Command List
 ------------
 1. Almost all of the commands which are permitted in the docker container can be executed via web console except those which need user input interactivity such as cd, vi etc.
 
-2. Additional commands
+2. By default inside the docker container, it is run as root user (type whoami). However this is different from host root as the commands in root container are less and more restrictive. This is a default docker security.  
+
+3. Additional commands
 
      1. `start <container name>` to start existing container.
         
      2. `stop <container name>` to stop existing container.
         
-     3. `save-as <file name with extension>` create or update a file.
+     3. `save-as <file name>` create or update a file to replace vi but with just basic function.
      
 Change Servlet Port
 -------------------
