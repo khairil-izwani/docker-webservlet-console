@@ -19,6 +19,8 @@ This project is developed and tested on :-
 * Fedora 19 64 bit
 * Java 1.6 u38
 * Docker 1.0.0
+* Maven 3.x
+* Eclipse IDE (optional)
 
 Pre-requisite
 ------------
@@ -109,9 +111,9 @@ Create Hello Container in Java
 ------------------------------
 This to demonstrate how to add a new script/program/process and execute it inside an already running container via the client web console. 
 
-*This is not limited to java but any other language such php or nodejs once the container servlet is started as a background process.*
+*This example is not limited to java language only. We should be able to do this using other languages as well.*
 
-1. type this in the ouput field of the web console
+1. type this in the **ouput** field of the web console
 
    ```java
         public class Welcome {
@@ -121,7 +123,7 @@ This to demonstrate how to add a new script/program/process and execute it insid
         }
    ```
 
-2. save the file by typing in the input field
+2. save the file by typing in the **input** field
 
         [connected@mycontainer]save-as Welcome.java
         
