@@ -151,11 +151,11 @@ container-host contains the main code to delegate the commands either to host or
 
 Let's assume that we use terminal, navigating to container-host root folder (which contains pom.xml).
 
-1. Import project dependencies, type
+1. Import project dependencies
 
          mvn clean install
          
-2. Create as Eclipse project, type
+2. Create as Eclipse project
 
          mvn eclipse:eclipse
 
@@ -183,10 +183,23 @@ Misc
    2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
    3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
 
-2. To run container.jar as a background process is easy. You just need to append & before attaching the script/program as the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile.
-   1. via command line, create 
-      1. create sh file
+2. To run container.jar as a background process is easy. You just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. **If you expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). You can only do that if you run docker image using /bin/bash** 
+   1. via command line 
+        1. the .sh file. Let say name it start.sh
+
            ```
-              #!/bin/bash
-              java -jar /opt/servlet/starter.jar & <your script here>
+                #!/bin/bash
+                java -jar /opt/servlet/starter.jar & <your script here>
            ```
+
+        2. run the sh file in the docker run docker run -i -t <myimage> ./start.sh
+        
+   2. via Dockerfile
+        1. the .sh file. Let say name it start.sh
+
+           ```
+                #!/bin/bash
+                java -jar /opt/servlet/starter.jar & <your script here>
+           ```
+
+        2. run the sh file in the docker run docker run -i -t <myimage> ./start.sh        
