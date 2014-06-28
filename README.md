@@ -214,4 +214,4 @@ Misc and General Knowledge
 
    Then inside the container, we navigate to /root folder and copy the container.jar
 
-   After we do this, usually we will commit this container and create a new image. Then the new container created from      this new image will still have the directory to host unmounted. This might raise security concern. To solve this         issue, we can recreate a new image from this container.
+   After we do this, usually we will commit this container and create a new image. **Then the new container created from    this new image will still have the directory to host unmounted**. This might raise a security concern. To solve this     issue, we can recreate a new image from this container.
