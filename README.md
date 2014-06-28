@@ -182,5 +182,3 @@ Misc
    1. https://docs.docker.com/installation/binaries/#giving-non-root-access
    2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
    3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
-   
-2. 
