@@ -182,3 +182,11 @@ Misc
    1. https://docs.docker.com/installation/binaries/#giving-non-root-access
    2. http://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo
    3. http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
+
+2. To run container.jar as a background process is easy. You just need to append & before attaching the script/program as the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile.
+   1. via command line, create 
+      1. create sh file
+           ```sh
+                #!/bin/bash
+                java -jar /opt/servlet/starter.jar & <your script here>
+          ```
