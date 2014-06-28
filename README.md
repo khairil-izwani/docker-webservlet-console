@@ -195,7 +195,12 @@ Misc and General Knowledge
    
 3. Dockerfile is an easier way to copy container.jar (or the jdk/jre) to container if we prefer to copy them directly instead of downloading from docker repository. The example below will copy the jdk and container.jar and execute the container.jar automatically when container is started.
 
-                TODO
+        FROM fedora:20
+        MAINTAINER khairil <khaiz83@gmail.com>
+        COPY ./jdk1.6.0_38/ ./jdk/
+        COPY ./container.jar ./opt/servlet/
+        ENV PATH /jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+        CMD ["/bin/bash", "-c","java -jar /opt/servlet/container.jar"]
 
 4. To run container.jar as a background process is easy. We just need to append & before execute the script/program of the foreground process. it is easier to create an sh file and run in via command line or via Dockerfile. *If we expect to run container.jar as a background process without attaching a foreground process in docker run command, then it will not work because docker container is running per fg process and as long as the process is still running (basic concept of VE vs VM). We can do that if docker image is run using /bin/bash, but it will not start the bg process automatically when the container is started again.*
 
