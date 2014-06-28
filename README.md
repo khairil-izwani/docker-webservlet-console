@@ -165,7 +165,7 @@ If you copy this jar to somewhere else or to container, you will need to copy th
 
 *Due to some issue, it's not (yet) possible to run this jar successfully as a single jar together with its dependencies via maven plugins. But this can be done easily via Eclipse*
 
-*To create a single jar via Eclipse, 
+To create a single jar via Eclipse, 
    1. Right click a project
    2. Choose Export 
    3. Choose Java 
