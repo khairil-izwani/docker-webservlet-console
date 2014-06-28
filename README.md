@@ -218,8 +218,6 @@ Misc and General Knowledge
    
 4. To use Dockerfile is an easier way to copy container.jar to container and/or the jdk/jre if we prefer to copy them directly instead of using packager such as yum or apt.
 
-           ```
                 FROM <myimage>:1.4
                 MAINTAINER khairil <khaiz83@gmail.com>
                 CMD ["/bin/bash", "-c","java -jar /opt/servlet/host.jar & <our script here>"]
-           ```
