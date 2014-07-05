@@ -3,7 +3,7 @@ docker-webservlet-console
 
 The Idea
 --------
-It acts as a desktop / mobile web console to connect, read, write and execute stuffs remotely inside the running containers hosted in the local machine. Additionally, by using tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
+It acts as a desktop / mobile web cli to connect, read, write and execute stuffs remotely inside the running containers hosted in the local machine. Additionally, by using tunnel service such as pagekite or ngrok, these sandboxed containers can be controlled easily via the internet.
 
 How It Is Done
 --------------
