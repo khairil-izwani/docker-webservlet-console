@@ -216,7 +216,7 @@ Misc and General Knowledge
                 java -jar /opt/servlet/container.jar & <our script here>
            ```
 
-        2. run the sh file `docker run -i -t <myimage> ./start.sh` to create a new image.
+        2. run the sh file `docker run -i -t <myimage> ./start.sh` to create a new image (this will open a tty or just   run with daemon mode -d).
         
    2. via Dockerfile
         1. as example
