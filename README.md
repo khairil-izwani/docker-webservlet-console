@@ -13,6 +13,8 @@ Why It Is Done This Way
 -----------------------
 I found it's quite hard to find a good example of attaching input to the STDIN in the running container via Docker remote API for host-container interaction. Besides, the 'docker execute' command is not yet available in the Docker release 1.0.0. This might change in the future once there is more resources of doing it.
 
+The reason for doing this, I want to be able to add and run new scripts or processes while my container is running with other processes. In my case it's Java programs (but not just limited to this language).
+
 Tech Stack
 ----------
 * Fedora 19 64 bit
