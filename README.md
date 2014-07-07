@@ -9,7 +9,7 @@ How It Is Done
 --------------
 Both host and container are talking to each other via inter servlet communication. It does not use the REST Docker Remote API but instead forwards the docker native command to the Java Runtime API. 
 
-Basically it works like a reverse proxy where the request from the client is sent to host servlet. The host servlet then forwards the request to the targeted containers servlet. Host servlet might receive response from container servlet.
+Basically it works like a reverse proxy where the request from client is sent to host servlet. The host servlet then forwards the request to the targeted containers servlet. Host servlet might receive response from container servlet.
 
 Why It Is Done This Way
 -----------------------
